@@ -14124,12 +14124,10 @@ a.bttn-dark {
 
 a.bttn-dark:hover {
   color: #FFF;
-  font-weight: bold;
 }
 
 a.bttn-dark:focus {
   color: #FFF;
-  font-weight: bold;
 }
 
 .bttn-dark {
