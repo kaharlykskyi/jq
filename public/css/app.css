@@ -14054,6 +14054,30 @@ body {
   font-weight: 400;
 }
 
+@media (min-width: 100px) {
+  .title {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 55px;
+  }
+}
+
+@media (min-width: 992px) {
+  .title {
+    font-size: 65px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .title {
+    font-size: 70px;
+  }
+}
+
 .links > a {
   padding: 10px 25px;
   font-size: 15px;
@@ -14187,5 +14211,56 @@ a.bttn-dark:focus {
 
 .content {
   margin-top: 10%;
+}
+
+@media (min-width: 100px) {
+  .content {
+    margin-top: 55%;
+  }
+}
+
+@media (min-width: 768px) {
+  .content {
+    margin-top: 15%;
+  }
+}
+
+@media (min-width: 992px) {
+  .content {
+    margin-top: 15%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .content {
+    margin-top: 15%;
+  }
+}
+
+li.nav-item {
+  text-align: center;
+}
+
+.jq-avatar-circle {
+  max-width: 40px;
+  border-radius: 50%;
+}
+
+.jq-avatar-circle-small {
+  border-radius: 50%;
+  max-width: 35px;
+}
+
+.jq-table-iframe {
+  width: 100%;
+  height: 100%;
+}
+
+#navbarDropdown {
+  font-size: 18px;
+}
+
+.navbar {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 1px 6px rgba(0, 0, 0, 0.3) !important;
 }
 

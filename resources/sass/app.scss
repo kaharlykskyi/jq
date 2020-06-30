@@ -229,3 +229,23 @@ a.bttn-dark {
 li.nav-item {
     text-align: center;
 }
+.jq-avatar-circle {
+    max-width: 40px;
+    border-radius: 50%;
+}
+
+.jq-avatar-circle-small {
+    border-radius: 50%;
+    max-width: 35px;
+}
+
+.jq-table-iframe {
+    width: 100%;
+    height: 100%;
+}
+ #navbarDropdown {
+     font-size: 18px
+ }
+ .navbar {
+     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 1px 6px rgba(0, 0, 0, 0.3) !important
+ }
