@@ -14081,18 +14081,31 @@ body {
 }
 
 a.bttn-dark {
-  margin: 10px;
-  color: #7289da;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   text-decoration: none;
-  transition: 0.3s ease all;
+  display: inline-block;
+  text-align: center;
+  width: 200px;
+  padding: 10px 0;
+  border: 1px solid #7289da;
+  border-radius: 4px;
+  position: relative;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5), 0 3px 6px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  color: #6d87e1;
+  margin: 5px 0;
 }
 
 a.bttn-dark:hover {
   color: #FFF;
+  font-weight: bold;
 }
 
 a.bttn-dark:focus {
   color: #FFF;
+  font-weight: bold;
 }
 
 .bttn-dark {
@@ -14168,5 +14181,9 @@ a.bttn-dark:focus {
 
 .redirect-name {
   color: #7289da;
+}
+
+.content {
+  margin-top: 10%;
 }
 

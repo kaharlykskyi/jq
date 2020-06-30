@@ -92,16 +92,28 @@ html, body {
 }
 
 a.bttn-dark {
-    margin: 10px;
-    color:$second;
-    text-decoration:none;
-    -webkit-transition:0.3s all ease;
-    transition:0.3s ease all;
+    font-size: .8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    padding: 10px 0;
+    border: 1px solid #7289da;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5), 0 3px 6px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    color: #6d87e1;
+    margin: 5px 0;
     &:hover {
         color:#FFF;
+        font-weight: bold;
     }
     &:focus {
         color:#FFF;
+        font-weight: bold;
     }
 }
 
@@ -177,4 +189,7 @@ a.bttn-dark {
 }
 .redirect-name {
     color: $second;
+}
+.content {
+    margin-top: 10%;
 }

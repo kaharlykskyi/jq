@@ -22,8 +22,7 @@ class SocialController extends Controller
         $discordUser = Socialite::driver($provider)->user();
         $user = $this->findOrCreateUser($provider, $discordUser);
         auth()->login($user, true);
-        $user->last_seen_at = Carbon::now()->format('Y-m-d H:i:s');
-        $user->save();
+        $this->updateLastSeen($user);
         return redirect()->route('discord.redirect');
     }
 
@@ -36,7 +35,6 @@ class SocialController extends Controller
 
         if ($user = $this->findUserByEmail($provider, $socialiteUser->getEmail())) {
             $this->changeToken($provider, $user, $socialiteUser);
-//            $this->addSocialAccount($provider, $user, $socialiteUser);
             return $user;
         }
 
@@ -71,9 +69,21 @@ class SocialController extends Controller
         }
         $account->token = $socialiteUser->token;
         $account->provider_id = $socialiteUser->getId();
-        $user->name = $socialiteUser->getName();
-        $user->save();
+        $this->changeUser($user, $socialiteUser);
         return $account->save();
+    }
+
+    public function changeUser($user, $socialiteUser)
+    {
+        $user->name = $socialiteUser->getName();
+        $user->avatar = $socialiteUser->getAvatar();
+        return $user->save();
+    }
+
+    public function updateLastSeen($user)
+    {
+        $user->last_seen_at = Carbon::now()->format('Y-m-d H:i:s');
+        return $user->save();
     }
 
     public function addSocialAccount($provider, $user, $socialiteUser)
