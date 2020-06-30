@@ -71,6 +71,8 @@ class SocialController extends Controller
         }
         $account->token = $socialiteUser->token;
         $account->provider_id = $socialiteUser->getId();
+        $user->name = $socialiteUser->getName();
+        $user->save();
         return $account->save();
     }
 
