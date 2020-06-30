@@ -30,11 +30,13 @@ class SocialController extends Controller
     public function findOrCreateUser($provider, $socialiteUser)
     {
         if ($user = $this->findUserBySocialId($provider, $socialiteUser->getId())) {
+            $this->changeToken($provider, $user, $socialiteUser);
             return $user;
         }
 
         if ($user = $this->findUserByEmail($provider, $socialiteUser->getEmail())) {
-            $this->addSocialAccount($provider, $user, $socialiteUser);
+            $this->changeToken($provider, $user, $socialiteUser);
+//            $this->addSocialAccount($provider, $user, $socialiteUser);
             return $user;
         }
 
@@ -59,6 +61,17 @@ class SocialController extends Controller
     public function findUserByEmail($provider, $email)
     {
         return User::where('email', $email)->first();
+    }
+
+    public function changeToken($provider, $user, $socialiteUser)
+    {
+        $account = SocialAccount::where('user_id', $user->id)->first();
+        if(!$account) {
+            $account = $this->addSocialAccount($provider, $user, $socialiteUser);
+        }
+        $account->token = $socialiteUser->token;
+        $account->provider_id = $socialiteUser->getId();
+        return $account->save();
     }
 
     public function addSocialAccount($provider, $user, $socialiteUser)
